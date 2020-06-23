@@ -1,0 +1,64 @@
+﻿<Window x:Class="WpfApp1.MainForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainForm" Height="569.388" Width="1072.066" Closing="MainForm_Closing" KeyDown="MainForm_KeyDown">
+
+    <Window.Background>
+        <ImageBrush ImageSource="Fon2.png"></ImageBrush>
+    </Window.Background>
+    <Grid>
+        <StackPanel>
+            <CheckBox x:Name="BlueBox" Content="Заказ с собой" Foreground="Red" MouseEnter="Button_MouseEnter_1" ToolTip="Нажмите на квадратик, если хотите сделать заказ с собой" HorizontalAlignment="Left" Height="19" Margin="681,42,0,0" VerticalAlignment="Top" Width="172" Checked="BlueSide"/>
+            <Popup x:Name="popup1" StaysOpen="False" Placement="Mouse" MaxWidth="180" AllowsTransparency="True">
+                <TextBlock TextWrapping="Wrap" Width="180" Background="LightPink" Opacity="0.8">
+                    Пожалуйста, оставьте чаевые, работникам нечем платить налоги((
+                </TextBlock>
+            </Popup>
+            <Expander Header="Точно бесплатно?" HorizontalAlignment="Left" Height="171" Margin="681,0,0,0" Width="172" Foreground="Red">
+                <StackPanel>
+                    <Grid Background="LightCyan"/>
+                    <TextBlock Height="148" Foreground="Red" Margin="0,0,-62,0"><Run Text="Да. Ваш заказ обойдется вам"/><LineBreak/><Run Text="ровно в 0 рублей. Такая щедрость"/><LineBreak/><Run Text=" обусловлена годовщиной компании."/><LineBreak/><Run Text=" Так что наслаждайтесь."/><LineBreak/><Run Text=" Халява для халявщиков. "/><LineBreak/><Run Text="Приятного аппетита."/></TextBlock>
+                </StackPanel>
+            </Expander>
+            <Button Content="Что-то тайное" HorizontalAlignment="Left" Height="55" Margin="918,0,0,0" Width="117" Click="Button_Click"/>
+        </StackPanel>
+        <Menu HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="1064">
+            <MenuItem Header="Сделать заказ" Height="31" Width="100" Click="SaveFile" InputGestureText="ctrl+o">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="S" Modifiers="control"/>
+                </MenuItem.InputBindings>
+                <Button x:Name="SaveBut" Content="Отдать заказ" Click="SaveFile"/>
+
+            </MenuItem>
+
+            <MenuItem Header="О разработчике" Height="31" Width="100" Click="AboutMe"/>
+
+
+
+        </Menu>
+
+        <Label x:Name="ProcLabel" Content="Бургер" HorizontalAlignment="Left" Height="40" Margin="10,36,0,0" VerticalAlignment="Top" Foreground="ForestGreen" Width="122" FontSize="24" FontFamily="Times New Roman"/>
+        <Label x:Name="MatLabel"  Content="Картошка" HorizontalAlignment="Left" Height="40" Margin="10,113,0,0" VerticalAlignment="Top" Foreground="ForestGreen" Width="209" FontSize="24" FontFamily="Times New Roman"/>
+        <Label x:Name="VideoLabel"  Content="Мяско" HorizontalAlignment="Left" Height="40" Margin="10,189,0,0" VerticalAlignment="Top" Foreground="ForestGreen" Width="133" FontSize="24" FontFamily="Times New Roman"/>
+        <Label x:Name="OperLabel"  Content="Соус" HorizontalAlignment="Left" Height="40" Margin="10,266,0,0" VerticalAlignment="Top" Foreground="ForestGreen" Width="219" FontSize="24" FontFamily="Times New Roman"/>
+        <Label x:Name="HranLabel"  Content="Напиток" HorizontalAlignment="Left" Height="40" Margin="10,343,0,0" VerticalAlignment="Top" Foreground="ForestGreen" Width="219" FontSize="24" FontFamily="Times New Roman"/>
+        <Label x:Name="BlockLabel"  Content="Десерт" HorizontalAlignment="Left" Height="40" Margin="10,419,0,0" VerticalAlignment="Top" Foreground="ForestGreen" Width="149" FontSize="24" FontFamily="Times New Roman"/>
+
+        <ScrollViewer HorizontalAlignment="Right" Width="332" Margin="0,36,388,10">
+            <StackPanel>
+                <ComboBox Loaded="ProcLoad" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="315" SelectionChanged="Proс_Selection"/>
+                <ComboBox Loaded="MatLoad" HorizontalAlignment="Left" Height="100"  VerticalAlignment="Top" Width="315" SelectionChanged="Potato_Selection"/>
+                <ComboBox Loaded="VideoLoad" HorizontalAlignment="Left" Height="100"  VerticalAlignment="Top" Width="315" SelectionChanged="Myaso_Selection"/>
+                <ComboBox Loaded="OperLoad" HorizontalAlignment="Left" Height="100"  VerticalAlignment="Top" Width="315" SelectionChanged="Soyses_Selection"/>
+                <ComboBox Loaded="HranLoad" HorizontalAlignment="Left" Height="100"  VerticalAlignment="Top" Width="315" SelectionChanged="Napitok_Selection"/>
+                <ComboBox Loaded="BlockLoad" HorizontalAlignment="Left" Height="100"  VerticalAlignment="Top" Width="315" SelectionChanged="Desert_Selection"/>
+            </StackPanel>
+        </ScrollViewer>
+
+
+    </Grid>
+</Window>

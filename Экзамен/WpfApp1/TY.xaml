@@ -1,0 +1,43 @@
+﻿<Window x:Class="WpfApp1.TY"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+Title="Windows" Height="464.917" Width="485.233"
+WindowStyle="None" AllowsTransparency="true" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" WindowStartupLocation="CenterScreen"
+>
+    <Window.Background>
+        <ImageBrush ImageSource="Heart.png"></ImageBrush>
+    </Window.Background>
+    <Grid Margin="0,0,160,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="113*"></RowDefinition>
+            <RowDefinition Height="72*"></RowDefinition>
+            <RowDefinition Height="70*"></RowDefinition>
+            <RowDefinition Height="45*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="MeMeMe.jpg" Grid.Row="0" RenderTransformOrigin="0.5,0.5" Margin="21,41,-78,61" Grid.RowSpan="3">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.907"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBlock Text="Программу сделал:" HorizontalAlignment="Center" Margin="358,139,-139,86" Foreground="Black" Width="106" Grid.RowSpan="2"/>
+        <TextBlock Text="Студент 26 группы" HorizontalAlignment="Center" Margin="358,162,-137,64" Foreground="Black" Width="104" Grid.RowSpan="2"/>
+        <TextBlock Text="Пиманов В.Д." HorizontalAlignment="Center" Margin="376,13,-125,37" Foreground="Black" Width="74" Grid.Row="1"/>
+        <Button Content="ТОП" Grid.Row="2" Margin="205,62,45,33" Click="Button_Click" Grid.RowSpan="2">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Fill="DarkOrange"></Ellipse>
+                        <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center"
+VerticalAlignment="Center"></Label>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+
+</Window>
